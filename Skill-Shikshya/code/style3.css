@@ -109,3 +109,172 @@
 .journey-img:hover .video-element {
   opacity: 1;
 }
+
+.Learn {
+  display: flex;
+  width: 1440px;
+  padding: 120px 0px 60px 0px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Learn-wrapper {
+  display: flex;
+  width: 1213px;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-1 {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-2 {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Learning-journey {
+  display: flex;
+  width: 453px;
+
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.Learn-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40.171px;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.card-wrapper,
+.card-wrapper-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card,
+.card-2 {
+  display: inline-flex;
+  padding: 58px 35px 58px 206px;
+  width: 585px;
+  height: 320px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 30px;
+  background: #f45b5b;
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease-out;
+}
+
+.card-2 {
+  background-color: #5492a0;
+  padding: 58px 206px 58px 35px;
+  align-items: center;
+  transform: translateX(0);
+  transition: all 0.5s ease-out;
+}
+
+.card:hover {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.card-2:hover {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.card-head {
+  display: flex;
+  width: 351px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.head-sub-head,
+.head-sub-head-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  align-self: stretch;
+}
+/* 
+.head-sub-head-2 {
+  align-items: flex-start;
+} */
+.card-heading {
+  color: var(--Base-Base-White);
+  text-align: center;
+  font-family: "Nohemi-1";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.card-sub-head {
+  color: #fff;
+  text-align: center;
+  font-family: "Outfit";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.card-ex {
+  color: var(--Base-Base-White);
+  text-align: right;
+  font-family: "Outfit";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card .svg-img,
+.card-2 .svg-img {
+  position: absolute;
+  left: -90px;
+  top: 20px;
+  animation: floating2 3s ease-in-out infinite;
+}
+
+.card-2 .svg-img {
+  left: 350px;
+}
+
+.card-img {
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes floating2 {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
