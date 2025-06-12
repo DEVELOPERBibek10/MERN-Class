@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Nohemi-1";
+  src: url("../assets/Fonts/Nohemi/Nohemi-Regular-BF6438cc4d0e493.ttf");
+}
+@font-face {
+  font-family: "Nohemi-2";
+  src: url("../assets/Fonts/Nohemi/Nohemi-Black-BF6438cc58744d4.ttf");
+}
+@font-face {
+  font-family: "Nohemi-3";
+  src: url("../assets/Fonts/Nohemi/Nohemi-Bold-BF6438cc577b524.woff");
+}
+
+:root {
+  --Gradient-1: linear-gradient(180deg, #1daa7e 0%, #1a8463 100%);
+  --Gradient-2: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  --Base-Base-Black: #2b2b2b;
+  --Black-Black800: #565656;
+  --Primary-Primary700: #157254;
+  --Base-Base-White: #fafafa;
+  --Primary-Primary900: #0c4332;
+  --Primary-Primary500: #1da077;
+  --Black-Black900: #414141;
+  --Secondary-Secondary500: #c33241;
+  --Secondary-Secondary50: #f9ebec;
+}
+
+.hot-skill-section {
+  display: flex;
+  width: 1440px;
+  padding: 60px 112px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hot-wrapper {
+  display: flex;
+  width: 1216px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upcomming-courses,
+.ex-courses,
+.ongoing-courses {
+  background-color: var(--Secondary-Secondary500);
+  height: 300px;
+  width: 400px;
+}
+
+.ex-courses {
+  width: 592px;
+  height: 461px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.view-course {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  width: 96%;
+  gap: 10px;
+}
+
+.view {
+  color: var(--Secondary-Secondary50);
+  text-align: center;
+  font-family: "Outfit";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.hot-images {
+  margin: auto;
+}
+
+.course-ex {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 75px 20px 75px;
+  gap: 30px;
+}
+.c-det,
+.uc-p,
+.oc-p {
+  width: 218px;
+}
+
+.n-courses {
+  width: 200px;
+  height: 138px;
+}
+
+.n-courses p {
+  color: var(--Secondary-Secondary50);
+  text-align: center;
+  font-family: "Nohemi-1";
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  position: relative;
+}
+
+.n-courses p sup,
+.nu-courses p sup,
+.no-courses p sup {
+  color: #f9ebec;
+  text-align: center;
+  font-family: "Nohemi-1";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  position: absolute;
+}
+
+.all-courses span,
+.uc-head,
+.oc-head {
+  color: var(--Secondary-Secondary50);
+  text-align: center;
+  font-family: "Outfit";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.uc-head,
+.oc-head {
+  color: var(--Secondary-Secondary500);
+}
+
+.all-courses p {
+  color: var(--Secondary-Secondary50);
+  font-family: "Outfit";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.upcomming-courses,
+.ongoing-courses {
+  width: 260px;
+  height: 461px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: var(--Secondary-Secondary50);
+  color: var(--Secondary-Secondary500);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nu-courses p,
+.no-courses p {
+  color: var(--Secondary-Secondary500, #c33241);
+  text-align: center;
+  font-family: "Nohemi-1";
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  position: relative;
+}
+
+.nu-courses p sup,
+.no-courses p sup {
+  top: -20px;
+  right: -10px;
+  color: var(--Secondary-Secondary500);
+}
+
+.uc-ex,
+.oc-ex {
+  transform: rotate(270deg);
+}
+
+.upcomming-courses {
+  gap: 100px;
+}
+
+.ongoing-courses {
+  gap: 85px;
+}
+
+.oc-head {
+  width: 218px;
+  text-align: left;
+}
