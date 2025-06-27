@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Table Handelling</title>
+</head>
+
+<body class='flex justify-center flex-col items-center min-h-screen'>
+    <h1 id="studentIDCards" class="text-center text-4xl font-bold my-5">Student's Details</h1>
+    <div class="shrink-0 shadow-lg rounded-xl overflow-hidden mx-4 md:mx-10 w-[60%]">
+        <table class="w-full table-auto ">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Name</th>
+                    <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Grade</th>
+                    <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Gender</th>
+                    <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Address</th>
+                    <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Phone</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+            </tbody>
+        </table>
+    </div>
+    <section id="id-card-container" class="min-h-screen w-full mt-10 p-10 ">
+        <h1 id="studentIDCards" class="text-center text-4xl font-bold mb-10">Student's ID Cards</h1>
+        <div id="card-conatiner" class="max-w-full flex gap-5 flex-wrap">
+            <div id="card-1" class="shadow-2xl w-[320px] h-[420px] rounded-xl flex-shrink-0 relative">
+                <div id="heading" class="w-full relative mt-2">
+                    <h4 class="text-center font-semibold text-xl">Student's Identity Card</h4>
+                </div>
+                <div id="img-container" class="w-[120px] h-[135px] bg-white mx-auto mt-10">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZSUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="" class="w-full h-full object-center object-cover">
+                </div>
+                <div id="details" class="p-5 mx-auto px-12 py-10 flex flex-col justify-center h-[50%]">
+                    <p id="Name"> <span>Name</span> : <span>Bibek Pyakurel</span></p>
+                    <p id="Name"> <span>Grade</span> : <span>12</span></p>
+                    <p id="Name"> <span>Gender</span> : <span>Male</span></p>
+                    <p id="Name"> <span>Address</span> : <span>Kathmandu, Nepal</span></p>
+                    <p id="Name"> <span>Contact</span> : <span>9800000000</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
