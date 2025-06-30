@@ -9,3 +9,9 @@ Fake-Store/package.json
 Tables/node_modules/
 Tables/package-lock.json
 Tables/package.json
+
+FK-store-table/node_modules/
+FK-store-table/package-lock.json
+FK-store-table/package.json
+
+
