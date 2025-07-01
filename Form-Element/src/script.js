@@ -2,6 +2,7 @@ const formElement = document.querySelector("form");
 
 async function postData(Object) {
   const errorMsg = document.querySelector("#error-message");
+  const sucessMsg = document.querySelector("#sucess-msg");
   try {
     let post = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
@@ -12,17 +13,11 @@ async function postData(Object) {
     });
 
     if (!post.ok) {
-      let error = await post.json();
-
-      errorMsg.textContent = `Registration failed : ${
-        error.message || "Unknown Error"
-      }`;
-      errorMsg.style.color = "red";
+      let error = await post.text();
       throw new Error(error.message || "Unknown Error");
     } else {
-      let response = await post.json();
-      errorMsg.textContent = `Registration Sucessful ${JSON.parse(response)}`;
-      errorMsg.style.color = "green";
+      sucessMsg.textContent = `Product added sucessfully`;
+      sucessMsg.style.color = "green";
     }
   } catch (error) {
     let message = `Fetching unsucessful : ${error}`;
