@@ -14,13 +14,13 @@ async function postData(Object) {
 
     if (!post.ok) {
       let error = await post.text();
-      throw new Error(error.message || "Unknown Error");
+      throw new Error(error || "Unknown Error");
     } else {
       sucessMsg.textContent = `Product added sucessfully`;
       sucessMsg.style.color = "green";
     }
   } catch (error) {
-    let message = `Fetching unsucessful : ${error}`;
+    let message = `Fetching unsucessful : ${error.message}`;
     errorMsg.textContent = message;
     errorMsg.style.color = "red";
   }
