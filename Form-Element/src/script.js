@@ -14,7 +14,7 @@ async function postData(Object) {
 
     if (!post.ok) {
       let error = await post.text();
-      throw new Error(error || "Unknown Error");
+      throw new Error(error);
     } else {
       sucessMsg.textContent = `Product added sucessfully`;
       sucessMsg.style.color = "green";
