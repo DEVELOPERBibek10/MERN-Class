@@ -1,8 +1,6 @@
 const formElement = document.querySelector("form");
-
+const msg = document.getElementById("message");
 async function postData(Object) {
-  const errorMsg = document.querySelector("#error-message");
-  const sucessMsg = document.querySelector("#sucess-msg");
   try {
     let post = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
@@ -16,31 +14,53 @@ async function postData(Object) {
       let error = await post.text();
       throw new Error(error);
     } else {
-      sucessMsg.textContent = `Product added sucessfully`;
-      sucessMsg.style.color = "green";
+      let message = "Product Submitted sucessfully";
+      Message(true, message);
     }
   } catch (error) {
     let message = `Fetching unsucessful : ${error.message}`;
-    errorMsg.textContent = message;
-    errorMsg.style.color = "red";
+    Message(false, message);
+  }
+}
+
+function timeOut() {
+  setTimeout(function () {
+    msg.innerHTML = "";
+  }, 4000);
+}
+
+function Message(isSucessful, message) {
+  if (isSucessful) {
+    msg.textContent = message;
+    msg.style.color = "green";
+    timeOut();
+  } else {
+    msg.textContent = message;
+    msg.style.color = "red";
+    timeOut();
   }
 }
 
 formElement.querySelector("button").addEventListener("click", function (event) {
   event.preventDefault();
-  let title = formElement.querySelector("#title").value;
-  let price = Number(formElement.querySelector("#price").value);
-  let category = formElement.querySelector("#category").value;
-  let description = formElement.querySelector("#description").value;
 
-  let Object = {
-    id: Date.now(),
-    title: title,
-    price: price,
-    description: description,
-    category: category,
-    image: "https://example.com",
-  };
+  let formData = new FormData(formElement);
+  let ProductInfo = Object.fromEntries(formData.entries());
+
+  if (ProductInfo.price) {
+    ProductInfo.price = parseFloat(ProductInfo.price);
+  }
+
+  if (
+    Object.values(ProductInfo).every((value) => value && String(value).trim())
+  ) {
+    postData(ProductInfo);
+  } else {
+    Message(
+      false,
+      "Please check either the form is empty or incomplete or have inapproprite info"
+    );
+  }
+
   formElement.reset();
-  postData(Object);
 });
