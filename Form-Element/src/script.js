@@ -55,12 +55,11 @@ formElement.querySelector("button").addEventListener("click", function (event) {
     Object.values(ProductInfo).every((value) => value && String(value).trim())
   ) {
     postData(ProductInfo);
+    formElement.reset();
   } else {
     Message(
       false,
       "Please check either the form is empty or incomplete or have inapproprite info"
     );
   }
-
-  formElement.reset();
 });
