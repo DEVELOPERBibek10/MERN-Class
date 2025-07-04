@@ -221,6 +221,7 @@ UserData();
 
 addBtn.addEventListener("click", function () {
   formModal.classList.replace("opacity-0", "opacity-100");
+  formElement.reset();
 });
 
 formModal.addEventListener("click", (event) => {
