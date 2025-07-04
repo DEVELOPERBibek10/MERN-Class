@@ -55,7 +55,7 @@ async function postData(Object) {
 function timeOut() {
   setTimeout(function () {
     msg.innerHTML = "";
-  }, 4000);
+  }, 3000);
 }
 
 function Message(isSucessful, message) {
@@ -72,30 +72,24 @@ function Message(isSucessful, message) {
 
 function getFormData(event) {
   if (event.target.type === "submit") event.preventDefault();
-
   let formData = new FormData(formElement);
   let ProductInfo = Object.fromEntries(formData.entries());
 
-  if (!ProductInfo) {
-    Message(false, "No data available");
-    return;
+  if (!ProductInfo.id) {
+    delete ProductInfo.id;
   } else {
-    if (ProductInfo.price) {
-      ProductInfo.price = parseFloat(ProductInfo.price);
-    } else {
-      Message(false, "Ivalid info");
-    }
-
-    if (!ProductInfo.id) {
-      delete ProductInfo.id;
-    }
-    if (
-      Object.values(ProductInfo).every((value) => value && String(value).trim())
-    ) {
-      postData(ProductInfo);
-    } else {
-      Message(false, "Please re-check the form");
-    }
+    ProductInfo.id = parseInt(ProductInfo.id);
+  }
+  if (
+    Object.values(ProductInfo).every(
+      (value) => value && String(value).trim()
+    ) &&
+    ProductInfo.price > 0 &&
+    isFinite(ProductInfo.price)
+  ) {
+    postData(ProductInfo);
+  } else {
+    Message(false, "Please re-check the form details");
   }
 }
 
@@ -221,6 +215,7 @@ UserData();
 
 addBtn.addEventListener("click", function () {
   formModal.classList.replace("opacity-0", "opacity-100");
+  Message(false, "");
   formElement.reset();
 });
 
@@ -232,17 +227,18 @@ formModal.addEventListener("click", (event) => {
 
 function setFormData(product) {
   formModal.classList.replace("opacity-0", "opacity-100");
+  Message(false, "");
   for (const key in product) {
     if (key === "rating") {
       continue;
     }
     formElement.elements[key].value = product[key];
   }
-  getFormData("_");
 }
 
 tableBody.addEventListener("click", function (event) {
   if (event.target.closest(".edit")) {
+    Message(false, "");
     const product = allProduct.find(
       (prod) => prod.id === Number(event.target.closest("tr").id)
     );
